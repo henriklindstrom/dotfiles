@@ -13,13 +13,13 @@ NeoBundle 'morhetz/gruvbox'
 
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundle 'joshdick/onedark.vim'
-
-NeoBundle 'joshdick/airline-onedark.vim'
+NeoBundle 'geoffharcourt/one-dark.vim'
 
 NeoBundle 'Lokaltog/vim-distinguished'
 
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+
+NeoBundle 'vim-airline/vim-airline-themes'
 
 NeoBundle 'scrooloose/syntastic'
 
@@ -97,8 +97,9 @@ let g:ag_mapping_message=0
 nnoremap <leader>m :silent make\|redraw!\|cc<CR>
 " Rebuild ctags
 nnoremap <silent> <F5> :echo "Rebuilding tags..."<cr>:! ctags -R .<cr>:echo "Rebuilt tags"<cr>
-" Run unittests in other tmux pane
-" nnoremap <silent> <leader>a :!tmux send-keys -t 1 'nosetests --with-describe-it ' %:p C-m<cr>
+" Set background
+nnoremap <leader>l :set background=light<cr>
+nnoremap <leader>d :set background=dark<cr>
 " }}}
 
 
@@ -234,8 +235,11 @@ nnoremap <leader>a :call RunAllTests()<cr>:redraw<cr>:call JumpToError()<cr>
 
 " Appearance {{{
 
-set background=dark
-colorscheme neodark
+set background=light
+colorscheme solarized
+
+" set background=dark
+" colorscheme neodark
 
 " set background=dark
 " colorscheme onedark
@@ -245,7 +249,8 @@ colorscheme neodark
 
 let g:airline_powerline_fonts = 1
 " let g:airline_theme='onedark'
-let g:airline_theme='neodark'
+" let g:airline_theme='neodark'
+let g:airline_theme='solarized'
 
 if has('gui_running')
     set guioptions-=m

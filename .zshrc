@@ -34,22 +34,23 @@ export LC_MESSAGES="en_US.UTF-8"
 
 # {{{ Aliases to make some native windows applications play nice with
 # a standard terminal. Uses https://github.com/rprichard/winpty
-alias py.test='winpty.exe py.test.exe'
-alias python='winpty.exe python'
-alias lf='winpty.exe limefu'
-alias ipython='winpty.exe ipython'
-alias ipython3='winpty.exe ipython3'
-alias node="winpty.exe node"
-alias nosetests="winpty.exe nosetests"
-alias devpi="winpty.exe devpi"
-alias meteor="winpty.exe meteor.bat"
-alias ionic="winpty.exe ionic.cmd"
+# alias py.test='winpty.exe py.test.exe'
+# alias python='winpty.exe python'
+# alias lf='winpty.exe limefu'
+# alias ipython='winpty.exe ipython'
+# alias ipython3='winpty.exe ipython3'
+# alias node="winpty.exe node"
+# alias nosetests="winpty.exe nosetests"
+# alias devpi="winpty.exe devpi"
+# alias meteor="winpty.exe meteor.bat"
+# alias ionic="winpty.exe ionic.cmd"
 # }}}
 
 # {{{ Python aliases
 alias pipu='pip uninstall'
 alias pipe='pip install -e'
 alias ppfw="pip freeze | sed 's/^M$//'"
+alias venv34="python3 -m virtualenv venv"
 # }}}
 # {{{ Git aliases
 alias g='git'
@@ -65,15 +66,6 @@ alias gp='git pull'
 # alias git='echo "98.139.183.24 google.com" >> /etc/hosts && git'
 # }}}
 
-# {{{ LIME specific stuff
-alias lall="console.exe limefu test flake && \
-    console.exe limefu test unit --all&& \
-    console.exe limefu test functional && \
-    console.exe limefu test e2e"
-alias sup="pushd ~/src/limetng && cmd /c setup.bat; popd"
-alias venv34="console.exe /cygdrive/c/Python34/Scripts/virtualenv venv"
-# }}}
-
 # {{{ General shell stuff
 # Tell tmux to always expect 256 colors
 alias tmux='tmux -2'
@@ -83,12 +75,6 @@ alias tma='tmux attach'
 
 # create grouped tmux session
 alias tmg='tmux new-session -t "LIME"'
-
-# Kill a native window process from cygwin terminal
-alias killw='taskkill /F /PID'
-#
-# Kill all humans!
-alias killall='taskkill /F /T /IM'
 
 # Standard shell shortcuts
 alias ll='ls -l --color'
@@ -120,7 +106,7 @@ SAVEHIST=1000
 #
 function dir_for_project() {
     local PROJNAME=$1
-    echo "$(find -L /cygdrive/c/src -maxdepth 4 -type d -iname $PROJNAME -print -quit)"
+    echo "$(find -L ~/src -maxdepth 4 -type d -iname $PROJNAME -print -quit)"
 }
 
 
