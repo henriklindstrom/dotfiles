@@ -2,6 +2,7 @@
 # {{{ The following lines were added by compinstall
 zstyle :compinstall filename '/home/hli/.zshrc'
 
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 # }}}
@@ -50,6 +51,7 @@ export LC_MESSAGES="en_US.UTF-8"
 alias pipu='pip uninstall'
 alias pipe='pip install -e'
 alias ppfw="pip freeze | sed 's/^M$//'"
+alias pipr="pip install -r requirements.txt"
 alias venv34="python3 -m virtualenv venv"
 # }}}
 # {{{ Git aliases
@@ -276,6 +278,10 @@ function tms() {
     tmux attach-session -t $SESSIONNAME &> /dev/null
 }
 
+function tmn() {
+    local PATH="~/src/$1"
+    /usr/bin/tmux new-window -n $1 -c "$PATH"
+}
 # }}}
 
 # {{{ LIME Stuff
