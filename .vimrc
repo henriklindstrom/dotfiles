@@ -100,6 +100,9 @@ nnoremap <silent> <F5> :echo "Rebuilding tags..."<cr>:! ctags -R .<cr>:echo "Reb
 " Set background
 nnoremap <leader>l :set background=light<cr>
 nnoremap <leader>d :set background=dark<cr>
+" Yank and paste between tmux windows
+vnoremap <leader>y :'<,'>w! ~/.vimclip<cr>
+nnoremap <leader>p :r ~/.vimclip<cr>
 " }}}
 
 
