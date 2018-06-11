@@ -238,11 +238,11 @@ nnoremap <leader>a :call RunAllTests()<cr>:redraw<cr>:call JumpToError()<cr>
 
 " Appearance {{{
 
-set background=light
-colorscheme solarized
+set background=dark
+" colorscheme solarized
 
 " set background=dark
-" colorscheme neodark
+colorscheme neodark
 
 " set background=dark
 " colorscheme onedark
@@ -252,8 +252,8 @@ colorscheme solarized
 
 let g:airline_powerline_fonts = 1
 " let g:airline_theme='onedark'
-" let g:airline_theme='neodark'
-let g:airline_theme='solarized'
+let g:airline_theme='neodark'
+" let g:airline_theme='solarized'
 
 if has('gui_running')
     set guioptions-=m
